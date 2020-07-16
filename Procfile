@@ -1,1 +1,1 @@
-web: gunicorn djamgo_todo.wsgi: application
+web: gunicorn djamgo_todo.wsgi:application
