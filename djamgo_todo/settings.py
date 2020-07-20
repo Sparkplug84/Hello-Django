@@ -26,7 +26,7 @@ SECRET_KEY = '3bxa^5_xa9du(*u#f$5z*ryaxqp0-e)yvpwmq=ewu7--zqp%bc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sparkplug84-todo-django-app.herokuapp.com']
 
 
 # Application definition
