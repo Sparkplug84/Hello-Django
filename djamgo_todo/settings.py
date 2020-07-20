@@ -21,13 +21,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3bxa^5_xa9du(*u#f$5z*ryaxqp0-e)yvpwmq=ewu7--zqp%bc'
+SECRET_KEY = os.environ.get('SECRET_KEY', '3bxa^5_xa9du(*u#f$5z*ryaxqp0-e)yvpwmq=ewu7--zqp%bc')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sparkplug84-todo-django-app.herokuapp.com']
-
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+# 'sparkplug84-todo-django-app.herokuapp.com', 'localhost'
 
 # Application definition
 
@@ -83,9 +83,9 @@ WSGI_APPLICATION = 'djamgo_todo.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://upmpzzysmemfyu:a87b5a0fe80d9e9d6a3a4594ee7b2f16796e63c865ca1543761840186330c7b3@ec2-3-213-192-58.compute-1.amazonaws.com:5432/dci34dlt8rcoft')
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
-
+# postgres://upmpzzysmemfyu:a87b5a0fe80d9e9d6a3a4594ee7b2f16796e63c865ca1543761840186330c7b3@ec2-3-213-192-58.compute-1.amazonaws.com:5432/dci34dlt8rcoft
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
